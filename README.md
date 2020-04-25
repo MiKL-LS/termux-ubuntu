@@ -8,6 +8,7 @@ bash ubuntu.sh
 There are two flags in this script:
 
 `-u` to uninstall
+
 `-v` to specify the version, just like my Termux-Debian script
 
 Supported versions are based on what the majority of users use:
