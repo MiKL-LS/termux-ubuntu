@@ -9,7 +9,7 @@ function install {
 		case $suite in
 			18.04|19.10|20.04)
 				echo "using base image '$suite'... "; type="base";;
-			16.04)
+			16.04|14.04|12.04)
 				echo "Using core image of `$suite`..."; type="core";;
 			*)
 				echo "Unsupported version '$suite'. Aborting"; exit ;;
@@ -55,7 +55,7 @@ function install {
 		echo "Decompressing ${distro} tarball..."
 		proot --link2symlink tar -xf ${current}/${tarball} || :
 		echo "Fixing nameserver..."
-		echo -e "${nameserver1}\n${nameserver2}" > etc/resolv.conf
+		echo -e "namerserver ${nameserver1}\nnameserver ${nameserver2}" > etc/resolv.conf
 		cd ${current}
 	fi
 	mkdir binds
