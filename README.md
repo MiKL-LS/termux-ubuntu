@@ -15,4 +15,8 @@ Supported versions are based on what the majority of users use:
   
  `-u` to uninstall
 
+To remove the errors at start: (this is a workaround, not a fix)
+
+touch ubuntu-fs/root/.hushlogin
+
 Made this script when I heard that Ubuntu 20.04 was released to the public
