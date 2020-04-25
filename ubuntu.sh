@@ -7,8 +7,10 @@ nameserver1="1.1.1.1" nameserver2="1.0.0.1" # nameservers to make ubuntu work
 function install {
 	function set_suite() {
 		case $suite in
-			16.04|18.04|19.10|20.04)
-				echo "Version set as '$suite'... ";;
+			18.04|19.10|20.04)
+				echo "using base image '$suite'... "; type="base";;
+			16.04)
+				echo "Using core image of `$suite`..."; type="core";;
 			*)
 				echo "Unsupported version '$suite'. Aborting"; exit ;;
 		esac
@@ -46,7 +48,7 @@ function install {
 	if [ first != 1 ]; then
 		if [ ! -f $tarball ]; then
 			get_arch
-			wget "http://cdimage.ubuntu.com/ubuntu-base/releases/${suite}/release/ubuntu-base-${suite}-base-${arch}.tar.gz" -O $tarball
+			wget "http://cdimage.ubuntu.com/ubuntu-base/releases/${suite}/release/ubuntu-base-${suite}-${type}-${arch}.tar.gz" -O $tarball
 		fi
 		mkdir "$folder"
 		cd "$folder"
