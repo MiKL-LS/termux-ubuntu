@@ -1,6 +1,6 @@
 # termux-ubuntu
 
-## ARCHIVED: [`proot-distro`](https://github.com/termux/proot-distro) is a better alternative that this hunk of junk
+## ARCHIVED: Termux's [`proot-distro`](https://github.com/termux/proot-distro) is a better alternative that this hunk of junk
 
 To install, just curl the link and execute with bash: (installs 20.04 by default)
 ```
